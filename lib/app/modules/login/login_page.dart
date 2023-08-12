@@ -40,8 +40,11 @@ class LoginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(
-                  child: Image.asset('assets/images/logo.png'),
+                Padding(
+                  padding: const EdgeInsets.all(90.0),
+                  child: Center(
+                    child: Image.asset('assets/images/pngwing.com.png'),
+                  ),
                 ),
                 SizedBox(
                   height: screenSize.height * .1,
@@ -57,9 +60,13 @@ class LoginPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.grey[200],
                     ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Image.asset('assets/images/google.png'),
+                    child: const Text(
+                      'Entrar',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),

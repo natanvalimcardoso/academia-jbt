@@ -13,6 +13,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp.router(
       title: 'Job Timer',
       // builder: Asuka.builder,
+      debugShowCheckedModeBanner: false,
       theme: AppConfigUI.theme,
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
