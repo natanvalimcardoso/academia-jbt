@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:modular_bloc_bind/modular_bloc_bind.dart';
 
-import 'package:job_timer/app/modules/project/task/task_page.dart';
-import 'package:job_timer/app/view_models/project_model.dart';
+import 'package:optimized_time/app/modules/project/task/task_page.dart';
+import 'package:optimized_time/app/view_models/project_model.dart';
 
 import 'controller/task_controller.dart';
 

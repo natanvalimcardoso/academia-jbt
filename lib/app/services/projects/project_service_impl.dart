@@ -1,9 +1,9 @@
-import 'package:job_timer/app/entities/project.dart';
-import 'package:job_timer/app/entities/project_status.dart';
-import 'package:job_timer/app/entities/project_task.dart';
-import 'package:job_timer/app/repositories/projects/project_repository.dart';
-import 'package:job_timer/app/view_models/project_model.dart';
-import 'package:job_timer/app/view_models/project_task_model.dart';
+import 'package:optimized_time/app/entities/project.dart';
+import 'package:optimized_time/app/entities/project_status.dart';
+import 'package:optimized_time/app/entities/project_task.dart';
+import 'package:optimized_time/app/repositories/projects/project_repository.dart';
+import 'package:optimized_time/app/view_models/project_model.dart';
+import 'package:optimized_time/app/view_models/project_task_model.dart';
 
 import 'project_service.dart';
 

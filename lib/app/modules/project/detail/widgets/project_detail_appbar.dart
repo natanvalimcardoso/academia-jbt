@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'package:job_timer/app/entities/project_status.dart';
-import 'package:job_timer/app/modules/project/detail/controller/project_detail_controller.dart';
-import 'package:job_timer/app/view_models/project_model.dart';
+import 'package:optimized_time/app/entities/project_status.dart';
+import 'package:optimized_time/app/modules/project/detail/controller/project_detail_controller.dart';
+import 'package:optimized_time/app/view_models/project_model.dart';
 
 class ProjectDetailAppbar extends SliverAppBar {
   ProjectDetailAppbar({

@@ -1,5 +1,5 @@
 import 'package:isar/isar.dart';
-import 'package:job_timer/app/entities/project_task.dart';
+import 'package:optimized_time/app/entities/project_task.dart';
 
 @collection
 class ProjectTaskModel {

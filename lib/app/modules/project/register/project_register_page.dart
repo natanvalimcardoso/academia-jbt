@@ -1,8 +1,8 @@
 // import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:job_timer/app/core/ui/button_with_loader.dart';
-import 'package:job_timer/app/modules/project/register/controller/project_register_controller.dart';
+import 'package:optimized_time/app/core/ui/button_with_loader.dart';
+import 'package:optimized_time/app/modules/project/register/controller/project_register_controller.dart';
 import 'package:validatorless/validatorless.dart';
 
 class ProjectRegisterPage extends StatefulWidget {

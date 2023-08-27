@@ -2,7 +2,7 @@ import 'dart:developer' as developer;
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:job_timer/app/services/auth/auth_service.dart';
+import 'package:optimized_time/app/services/auth/auth_service.dart';
 
 part 'login_state.dart';
 

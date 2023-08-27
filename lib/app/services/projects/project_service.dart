@@ -1,6 +1,6 @@
-import 'package:job_timer/app/entities/project_status.dart';
-import 'package:job_timer/app/view_models/project_model.dart';
-import 'package:job_timer/app/view_models/project_task_model.dart';
+import 'package:optimized_time/app/entities/project_status.dart';
+import 'package:optimized_time/app/view_models/project_model.dart';
+import 'package:optimized_time/app/view_models/project_task_model.dart';
 
 abstract class ProjectService {
   Future<void> register(ProjectModel project);

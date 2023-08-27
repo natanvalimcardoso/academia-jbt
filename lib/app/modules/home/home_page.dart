@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:job_timer/app/view_models/project_model.dart';
+import 'package:optimized_time/app/view_models/project_model.dart';
 
 import 'controller/home_controller.dart';
 import 'widgets/header_projects_menu.dart';

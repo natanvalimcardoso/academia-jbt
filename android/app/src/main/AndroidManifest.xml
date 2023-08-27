@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.job_timer">
+    package="com.example.optimized_time">
    <application
-        android:label="job_timer"
+        android:label="optimized_time"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

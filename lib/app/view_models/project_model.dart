@@ -1,7 +1,7 @@
 import 'package:isar/isar.dart';
-import 'package:job_timer/app/entities/project.dart';
-import 'package:job_timer/app/entities/project_status.dart';
-import 'package:job_timer/app/view_models/project_task_model.dart';
+import 'package:optimized_time/app/entities/project.dart';
+import 'package:optimized_time/app/entities/project_status.dart';
+import 'package:optimized_time/app/view_models/project_task_model.dart';
 
 class ProjectModel {
   factory ProjectModel.fromEntity(Project project) {

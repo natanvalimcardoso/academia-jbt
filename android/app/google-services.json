@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:802051879682:android:7374e55819854547d9c81b",
         "android_client_info": {
-          "package_name": "com.example.job_timer"
+          "package_name": "com.example.optimized_time"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "802051879682-clq91efb8b7d657s5ug5at0ev1obb5fg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.job_timer",
+            "package_name": "com.example.optimized_time",
             "certificate_hash": "b168474fa3c1d31ec93022c4219bd77aa9f8300b"
           }
         },
@@ -25,7 +25,7 @@
           "client_id": "802051879682-ef8r902bqpbr6df2m3lob0k36ufsmmrc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.job_timer",
+            "package_name": "com.example.optimized_time",
             "certificate_hash": "8630d14ed3c99eede5d61ecc9b87da7da0723f6b"
           }
         },
@@ -33,7 +33,7 @@
           "client_id": "802051879682-qni1sl8un514ui0am9fmk5lnn4ke2llf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.job_timer",
+            "package_name": "com.example.optimized_time",
             "certificate_hash": "2f3ea8928ff61dd6f747155fb3fcad4968114a1b"
           }
         },

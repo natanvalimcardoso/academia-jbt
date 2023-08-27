@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:job_timer/app/core/ui/job_timer_icons.dart';
-import 'package:job_timer/app/entities/project_status.dart';
-import 'package:job_timer/app/view_models/project_model.dart';
+import 'package:optimized_time/app/entities/project_status.dart';
+import 'package:optimized_time/app/view_models/project_model.dart';
 
+import '../../../core/ui/job_timer_icons.dart';
 import 'controller/project_detail_controller.dart';
 import 'widgets/project_detail_appbar.dart';
 import 'widgets/project_pie_chart.dart';

@@ -1,6 +1,6 @@
-import 'package:job_timer/app/entities/project.dart';
-import 'package:job_timer/app/entities/project_status.dart';
-import 'package:job_timer/app/entities/project_task.dart';
+import 'package:optimized_time/app/entities/project.dart';
+import 'package:optimized_time/app/entities/project_status.dart';
+import 'package:optimized_time/app/entities/project_task.dart';
 
 abstract class ProjectRepository {
   Future<void> register(Project project);

@@ -2,11 +2,11 @@ import 'dart:developer' as developer;
 
 import 'package:isar/isar.dart';
 
-import 'package:job_timer/app/core/database/database.dart';
-import 'package:job_timer/app/core/exceptions/failure.dart';
-import 'package:job_timer/app/entities/project.dart';
-import 'package:job_timer/app/entities/project_status.dart';
-import 'package:job_timer/app/entities/project_task.dart';
+import 'package:optimized_time/app/core/database/database.dart';
+import 'package:optimized_time/app/core/exceptions/failure.dart';
+import 'package:optimized_time/app/entities/project.dart';
+import 'package:optimized_time/app/entities/project_status.dart';
+import 'package:optimized_time/app/entities/project_task.dart';
 
 import 'project_repository.dart';
 

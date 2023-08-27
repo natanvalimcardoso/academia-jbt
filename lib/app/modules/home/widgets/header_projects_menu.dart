@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
-import 'package:job_timer/app/entities/project_status.dart';
-import 'package:job_timer/app/modules/home/controller/home_controller.dart';
+import 'package:optimized_time/app/entities/project_status.dart';
+import 'package:optimized_time/app/modules/home/controller/home_controller.dart';
 
 class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
   HeaderProjectsMenu({required this.controller});
