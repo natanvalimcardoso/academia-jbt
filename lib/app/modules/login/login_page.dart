@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:lottie/lottie.dart';
 
 import 'controller/login_controller.dart';
 
@@ -40,11 +41,10 @@ class LoginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(90.0),
-                  child: Center(
-                    child: Image.asset('assets/images/pngwing.com.png'),
-                  ),
+                Lottie.asset('assets/images/man.json'),
+                Lottie.asset(
+                  'assets/images/freela.json',
+                  height: screenSize.height * .3,
                 ),
                 SizedBox(
                   height: screenSize.height * .1,

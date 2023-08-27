@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -30,7 +29,12 @@ class _SplashPageState extends State<SplashPage> {
           ),
         ),
         child: Center(
-          child: Image.asset('assets/images/logo.png'),
+          child: Padding(
+                  padding: const EdgeInsets.all(90.0),
+                  child: Center(
+                    child: Image.asset('assets/images/pngwing.com.png'),
+                  ),
+                ),
         ),
       ),
     );

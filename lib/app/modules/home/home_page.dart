@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
           child: CustomScrollView(
             slivers: <Widget>[
               const SliverAppBar(
-                title: Text('Projects'),
+                title: Text('Projetos realizado'),
                 expandedHeight: 100,
                 toolbarHeight: 100,
                 centerTitle: true,
