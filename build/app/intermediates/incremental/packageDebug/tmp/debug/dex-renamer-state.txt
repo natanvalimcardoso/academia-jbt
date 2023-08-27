@@ -1,4 +1,4 @@
-#Sat Aug 12 16:38:51 BRT 2023
+#Sun Aug 27 19:24:54 BRT 2023
 base.0=C\:\\Users\\Natan\\Desktop\\job-timer\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
