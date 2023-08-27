@@ -39,7 +39,7 @@ class ProjectTaskTile extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

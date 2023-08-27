@@ -31,8 +31,8 @@ class LoginPage extends StatelessWidget {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color(0xff0092b9),
-                Color(0xff0167b2),
+                Color(0xFF8A2BE2),
+                Color(0xFF7B68EE),
               ],
             ),
           ),
@@ -51,17 +51,19 @@ class LoginPage extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 49,
-                  width: screenSize.width * .8,
+                  width: screenSize.width * .3,
                   child: ElevatedButton(
                     onPressed: () {
-                      // controller.signIn();
                       Modular.to.pushReplacementNamed('/home');
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.grey[200],
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(99),
+                      ),
                     ),
                     child: const Text(
-                      'Entrar',
+                      'Começar',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16,

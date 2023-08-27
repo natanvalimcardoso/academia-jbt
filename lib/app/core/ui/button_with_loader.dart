@@ -38,7 +38,7 @@ class ButtonWithLoader<B extends StateStreamable<S>, S>
                 child: CircularProgressIndicator.adaptive(
                   backgroundColor: Colors.white,
                 ),
-              )
+              ),
             ],
           );
         },

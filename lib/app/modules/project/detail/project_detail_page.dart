@@ -100,7 +100,7 @@ class ProjectDetailPage extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
