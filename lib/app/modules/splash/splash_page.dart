@@ -23,18 +23,18 @@ class _SplashPageState extends State<SplashPage> {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xff0092b9),
-              Color(0xff0167b2),
+              Color(0xFF8A2BE2),
+              Color(0xFF7B68EE),
             ],
           ),
         ),
         child: Center(
           child: Padding(
-                  padding: const EdgeInsets.all(90.0),
-                  child: Center(
-                    child: Image.asset('assets/images/pngwing.com.png'),
-                  ),
-                ),
+            padding: const EdgeInsets.all(90.0),
+            child: Center(
+              child: Image.asset('assets/images/pngwing.com.png'),
+            ),
+          ),
         ),
       ),
     );
