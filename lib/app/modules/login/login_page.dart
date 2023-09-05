@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lottie/lottie.dart';
+import 'package:optimized_time/app/modules/register/register_page.dart';
 
 import 'controller/login_controller.dart';
 
@@ -47,7 +48,7 @@ class LoginPage extends StatelessWidget {
                   height: screenSize.height * .3,
                 ),
                 SizedBox(
-                  height: screenSize.height * .1,
+                  height: screenSize.height * .05,
                 ),
                 SizedBox(
                   height: 49,
@@ -72,6 +73,59 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(
+                   height:  29,
+                ),
+                SizedBox(
+                  height: 49,
+                  width: screenSize.width * .3,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Modular.to.pushReplacementNamed('/home');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(99),
+                      ),
+                    ),
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                   height:  29,
+                ),
+                SizedBox(
+                  height: 49,
+                  width: screenSize.width * .3,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterPage()));
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(99),
+                      ),
+                    ),
+                    child: const Text(
+                      'Registrar',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+                
                 BlocSelector<LoginController, LoginState, bool>(
                   bloc: controller,
                   selector: (state) => state.status == LoginStatus.loading,
