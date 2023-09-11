@@ -4,18 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class InputWidget extends StatefulWidget {
-  final String? Function(String?)? validator;
-  final String labelText;
-  final double? bottom;
-  final List<TextInputFormatter>? formatters;
-  final TextEditingController controller;
-  final bool? isLastInput;
-  final bool? isPassword;
-  final TextInputType? keyboard;
-  final Function()? onTap;
-  final FocusNode? focusNode;
-  final Iterable<String>? autofillHints;
-  final double? radius;
   const InputWidget({
     super.key,
     required this.labelText,
@@ -31,6 +19,18 @@ class InputWidget extends StatefulWidget {
     this.autofillHints,
     this.radius,
   });
+  final String? Function(String?)? validator;
+  final String labelText;
+  final double? bottom;
+  final List<TextInputFormatter>? formatters;
+  final TextEditingController controller;
+  final bool? isLastInput;
+  final bool? isPassword;
+  final TextInputType? keyboard;
+  final Function()? onTap;
+  final FocusNode? focusNode;
+  final Iterable<String>? autofillHints;
+  final double? radius;
 
   @override
   // ignore: library_private_types_in_public_api
