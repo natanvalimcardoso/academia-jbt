@@ -26,10 +26,15 @@ class HomePage extends StatelessWidget {
         }
       },
       child: Scaffold(
-        drawer: const Drawer(
+        drawer:  Drawer(
           child: SafeArea(
-            child: ListTile(
-              title: Text('Exit'),
+            child: GestureDetector(
+              onTap: () {
+              controller.logout();
+              },
+              child: ListTile(
+                title: Text('Exit'),
+              ),
             ),
           ),
         ),

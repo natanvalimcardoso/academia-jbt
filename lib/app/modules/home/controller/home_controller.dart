@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:optimized_time/app/entities/project_status.dart';
 import 'package:optimized_time/app/services/projects/project_service.dart';
 import 'package:optimized_time/app/view_models/project_model.dart';
@@ -13,6 +15,7 @@ class HomeController extends Cubit<HomeState> {
     required ProjectService projectService,
   })  : _projectService = projectService,
         super(HomeState.initial());
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   final ProjectService _projectService;
 
@@ -37,6 +40,12 @@ class HomeController extends Cubit<HomeState> {
         projectFilter: status,
       ),
     );
+  }
+
+  // ignore: always_declare_return_types
+  logout() async {
+    await _firebaseAuth.signOut();
+    await Modular.to.pushReplacementNamed('/login/');
   }
 
   void updateList() => filter(state.projectFilter);
