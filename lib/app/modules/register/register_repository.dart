@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:get/get.dart';
-
 
 class RegisterRepository {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -9,32 +9,14 @@ class RegisterRepository {
   Future<void> registerApp({
     required String email,
     required String password,
-    required String name,
   }) async {
     try {
-      final userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
+      await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-      if (userCredential.user != null) {
-        await _firebaseAuth.currentUser?.updateDisplayName(name);
-        await _firebaseAuth.signOut();
-        await Get.dialog(
-          CupertinoAlertDialog(
-            title: const Text('Sucesso!'),
-            content: const Text('Usuário cadastrado com sucesso!'),
-            actions: [
-              CupertinoDialogAction(
-                onPressed: () async {
-                  await Get.offAllNamed('/login');
-                },
-                child: const Text('Ok'),
-              ),
-            ],
-          ),
-        );
-      }
+      Modular.to.navigate('/login/');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         await Get.dialog(

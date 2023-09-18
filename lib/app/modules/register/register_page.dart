@@ -53,8 +53,10 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: controller.nameController,
                         validator: Validatorless.multiple(
                           [
-                            Validatorless.required('O campo de nome é obrigatório'),
-                            Validatorless.min(6, 'O nome deve ter no mínimo 6 caracteres'),
+                            Validatorless.required(
+                                'O campo de nome é obrigatório'),
+                            Validatorless.min(
+                                6, 'O nome deve ter no mínimo 6 caracteres'),
                           ],
                         ),
                       ),
@@ -65,7 +67,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: controller.emailController,
                         validator: Validatorless.multiple(
                           [
-                            Validatorless.required('O campo de email é obrigatório'),
+                            Validatorless.required(
+                                'O campo de email é obrigatório'),
                             Validatorless.email('E-mail inválido'),
                           ],
                         ),
@@ -77,7 +80,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: controller.emailConfirmController,
                         validator: Validatorless.multiple(
                           [
-                            Validatorless.required('O campo de email é obrigatório'),
+                            Validatorless.required(
+                                'O campo de email é obrigatório'),
                             Validatorless.email('E-mail inválido'),
                             Validatorless.compare(
                               controller.emailController,
@@ -93,8 +97,10 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: controller.passwordController,
                         validator: Validatorless.multiple(
                           [
-                            Validatorless.required('O campo de senha é obrigatório'),
-                            Validatorless.min(6, 'A senha deve ter no mínimo 6 caracteres'),
+                            Validatorless.required(
+                                'O campo de senha é obrigatório'),
+                            Validatorless.min(
+                                6, 'A senha deve ter no mínimo 6 caracteres'),
                           ],
                         ),
                       ),
@@ -106,8 +112,10 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: controller.passwordConfirmController,
                         validator: Validatorless.multiple(
                           [
-                            Validatorless.required('O campo de senha é obrigatório'),
-                            Validatorless.min(6, 'A senha deve ter no mínimo 6 caracteres'),
+                            Validatorless.required(
+                                'O campo de senha é obrigatório'),
+                            Validatorless.min(
+                                6, 'A senha deve ter no mínimo 6 caracteres'),
                             Validatorless.compare(
                               controller.passwordController,
                               'As senhas não coincidem',
@@ -127,7 +135,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: ElevatedButton(
                   onPressed: () {
                     if (controller.formKeyRegister.currentState!.validate()) {
-                      controller.register();
+                      controller.register(
+                        controller.emailController.text,
+                        controller.passwordController.text,
+                      );
                     }
                   },
                   child: const Text('Cadastrar'),
