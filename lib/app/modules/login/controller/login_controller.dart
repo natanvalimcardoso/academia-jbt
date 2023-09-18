@@ -27,8 +27,8 @@ class LoginController extends Cubit<LoginState> {
     String password,
   ) async {
     await repository.loginWithEmail(
-      emailController.toString(),
-      passwordController.toString(),
+      emailController.text,
+      passwordController.text,
     );
   }
 

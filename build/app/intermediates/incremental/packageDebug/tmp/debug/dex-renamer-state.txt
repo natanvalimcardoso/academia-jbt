@@ -1,4 +1,4 @@
-#Mon Sep 11 19:57:58 BRT 2023
+#Mon Sep 18 19:57:36 BRT 2023
 base.0=D\:\\Projetos\\ulbra\\optimized_time\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 base.1=D\:\\Projetos\\ulbra\\optimized_time\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 path.0=classes.dex

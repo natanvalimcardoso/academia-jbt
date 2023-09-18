@@ -1,7 +1,6 @@
 // import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lottie/lottie.dart';
 import 'package:optimized_time/app/modules/register/register_page.dart';
 import 'package:optimized_time/app/modules/register/widgets/input_widget.dart';
@@ -26,8 +25,8 @@ class LoginPage extends StatelessWidget {
       listenWhen: (previous, current) => previous.status != current.status,
       listener: (context, state) {
         if (state.status == LoginStatus.failure) {
-          // final message = state.errorMessage ?? 'Error when logging';
-          // AsukaSnackbar.alert(message).show();
+          final message = state.errorMessage ?? 'Error when logging';
+          print(message);
         }
       },
       child: Scaffold(
@@ -97,11 +96,9 @@ class LoginPage extends StatelessWidget {
                       onPressed: () {
                         if (controller.formKeyLogin.currentState!.validate()) {
                           controller.login(
-                            controller.emailController.toString(),
-                            controller.passwordController.toString(),
+                            controller.emailController.text,
+                            controller.passwordController.text,
                           );
-
-                          Modular.to.pushReplacementNamed('/home');
                         }
                       },
                       style: ElevatedButton.styleFrom(
