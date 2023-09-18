@@ -16,7 +16,7 @@ class RegisterRepository {
         password: password,
       );
 
-      Modular.to.navigate('/login/');
+      Modular.to.pushReplacementNamed('/home');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         await Get.dialog(
