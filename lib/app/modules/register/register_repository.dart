@@ -19,10 +19,10 @@ class RegisterRepository {
         password: password,
       );
 
-      await Modular.to.pushReplacementNamed('/login/');
+      Modular.to.pop();
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
-        await  showDialog(
+        await showDialog(
           context: context,
           builder: (context) {
             return AlertDialog(
@@ -40,7 +40,7 @@ class RegisterRepository {
           },
         );
       } else if (e.code == 'invalid-email') {
-        await   showDialog(
+        await showDialog(
           context: context,
           builder: (context) {
             return AlertDialog(
@@ -76,7 +76,7 @@ class RegisterRepository {
           },
         );
       } else {
-        await  showDialog(
+        await showDialog(
           context: context,
           builder: (context) {
             return AlertDialog(

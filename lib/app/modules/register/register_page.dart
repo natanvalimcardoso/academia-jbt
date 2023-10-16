@@ -14,6 +14,8 @@ class RegisterPage extends StatefulWidget {
   State<RegisterPage> createState() => _RegisterPageState();
 }
 
+bool isLoaded = false;
+
 class _RegisterPageState extends State<RegisterPage> {
   final controller = Get.put(RegisterController());
   @override
@@ -53,10 +55,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: controller.nameController,
                         validator: Validatorless.multiple(
                           [
-                            Validatorless.required(
-                                'O campo de nome é obrigatório'),
-                            Validatorless.min(
-                                6, 'O nome deve ter no mínimo 6 caracteres'),
+                            Validatorless.required('O campo de nome é obrigatório'),
+                            Validatorless.min(6, 'O nome deve ter no mínimo 6 caracteres'),
                           ],
                         ),
                       ),
@@ -67,8 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: controller.emailController,
                         validator: Validatorless.multiple(
                           [
-                            Validatorless.required(
-                                'O campo de email é obrigatório'),
+                            Validatorless.required('O campo de email é obrigatório'),
                             Validatorless.email('E-mail inválido'),
                           ],
                         ),
@@ -80,8 +79,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: controller.emailConfirmController,
                         validator: Validatorless.multiple(
                           [
-                            Validatorless.required(
-                                'O campo de email é obrigatório'),
+                            Validatorless.required('O campo de email é obrigatório'),
                             Validatorless.email('E-mail inválido'),
                             Validatorless.compare(
                               controller.emailController,
@@ -97,10 +95,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: controller.passwordController,
                         validator: Validatorless.multiple(
                           [
-                            Validatorless.required(
-                                'O campo de senha é obrigatório'),
-                            Validatorless.min(
-                                6, 'A senha deve ter no mínimo 6 caracteres'),
+                            Validatorless.required('O campo de senha é obrigatório'),
+                            Validatorless.min(6, 'A senha deve ter no mínimo 6 caracteres'),
                           ],
                         ),
                       ),
@@ -112,10 +108,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: controller.passwordConfirmController,
                         validator: Validatorless.multiple(
                           [
-                            Validatorless.required(
-                                'O campo de senha é obrigatório'),
-                            Validatorless.min(
-                                6, 'A senha deve ter no mínimo 6 caracteres'),
+                            Validatorless.required('O campo de senha é obrigatório'),
+                            Validatorless.min(6, 'A senha deve ter no mínimo 6 caracteres'),
                             Validatorless.compare(
                               controller.passwordController,
                               'As senhas não coincidem',
@@ -140,9 +134,31 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller.passwordController.text,
                         context,
                       );
+                      setState(() {
+                        isLoaded = true;
+                      });
+                      Future.delayed(const Duration(seconds: 2), () {
+                        setState(() {
+                          isLoaded = false;
+                        });
+                      });
                     }
                   },
-                  child: const Text('Cadastrar'),
+                  child: isLoaded == false
+                      ? const Text(
+                          'Registrar',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        )
+                      : const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: CircularProgressIndicator(
+                            color: Colors.white,
+                          ),
+                      ),
                 ),
               ),
             ],

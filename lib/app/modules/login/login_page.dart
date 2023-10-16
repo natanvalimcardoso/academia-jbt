@@ -8,7 +8,7 @@ import 'package:validatorless/validatorless.dart';
 
 import 'controller/login_controller.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({
     super.key,
     required this.controller,
@@ -17,11 +17,16 @@ class LoginPage extends StatelessWidget {
   final LoginController controller;
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
 
     return BlocListener<LoginController, LoginState>(
-      bloc: controller,
+      bloc: widget.controller,
       listenWhen: (previous, current) => previous.status != current.status,
       listener: (context, state) {
         if (state.status == LoginStatus.failure) {
@@ -56,13 +61,13 @@ class LoginPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: Form(
-                      key: controller.formKeyLogin,
+                      key: widget.controller.formKeyLogin,
                       child: Column(
                         children: [
                           InputWidget(
                             labelText: 'Seu Email',
                             keyboard: TextInputType.text,
-                            controller: controller.emailController,
+                            controller: widget.controller.emailController,
                             validator: Validatorless.multiple(
                               [
                                 Validatorless.required('O campo de email é obrigatório'),
@@ -73,7 +78,7 @@ class LoginPage extends StatelessWidget {
                           SizedBox(height: screenSize.height * 0.01),
                           InputWidget(
                             labelText: 'Sua Senha',
-                            controller: controller.passwordController,
+                            controller: widget.controller.passwordController,
                             validator: Validatorless.multiple(
                               [
                                 Validatorless.required('O campo de senha é obrigatório'),
@@ -91,30 +96,39 @@ class LoginPage extends StatelessWidget {
                     height: 49,
                     width: screenSize.width * .3,
                     child: ElevatedButton(
-                      onPressed: () {
-                        if (controller.formKeyLogin.currentState!.validate()) {
-                          controller.login(
-                            controller.emailController.text,
-                            controller.passwordController.text,
-                            context,
-                          );
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.purple,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(99),
+                        onPressed: () {
+                          if (widget.controller.formKeyLogin.currentState!.validate()) {
+                            widget.controller.login(
+                              widget.controller.emailController.text,
+                              widget.controller.passwordController.text,
+                              context,
+                            );
+                            setState(() {
+                              widget.controller.isLoaded = true;
+                            });
+                            Future.delayed(const Duration(seconds: 2), () {
+                              setState(() {
+                                widget.controller.isLoaded = false;
+                              });
+                            });
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.purple,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(99),
+                          ),
                         ),
-                      ),
-                      child: const Text(
-                        'Login',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
+                        child: widget.controller.isLoaded == false
+                            ? const Text(
+                                'Entrar',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              )
+                            : const CircularProgressIndicator()),
                   ),
                   const SizedBox(
                     height: 29,
@@ -148,7 +162,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   BlocSelector<LoginController, LoginState, bool>(
-                    bloc: controller,
+                    bloc: widget.controller,
                     selector: (state) => state.status == LoginStatus.loading,
                     builder: (context, show) {
                       return Visibility(
