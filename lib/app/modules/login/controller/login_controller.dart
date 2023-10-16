@@ -9,7 +9,6 @@ import 'package:optimized_time/app/services/auth/auth_service.dart';
 part 'login_state.dart';
 
 class LoginController extends Cubit<LoginState> {
-
   LoginController({
     required AuthService authService,
   })  : _authService = authService,

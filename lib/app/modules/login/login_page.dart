@@ -36,8 +36,8 @@ class LoginPage extends StatelessWidget {
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0xFF8A2BE2),
-                  Color(0xFF7B68EE),
+                  Color.fromARGB(255, 254, 254, 254),
+                  Color.fromARGB(255, 254, 254, 254),
                 ],
               ),
             ),
@@ -101,7 +101,7 @@ class LoginPage extends StatelessWidget {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
+                        backgroundColor: Colors.purple,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(99),
                         ),
@@ -109,7 +109,7 @@ class LoginPage extends StatelessWidget {
                       child: const Text(
                         'Login',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
@@ -132,7 +132,7 @@ class LoginPage extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
+                        backgroundColor: Colors.purple,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(99),
                         ),
@@ -140,7 +140,7 @@ class LoginPage extends StatelessWidget {
                       child: const Text(
                         'Registrar',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
@@ -157,7 +157,7 @@ class LoginPage extends StatelessWidget {
                           padding: EdgeInsets.only(top: 16),
                           child: Center(
                             child: CircularProgressIndicator.adaptive(
-                              backgroundColor: Colors.white,
+                              backgroundColor: Colors.purple,
                             ),
                           ),
                         ),
