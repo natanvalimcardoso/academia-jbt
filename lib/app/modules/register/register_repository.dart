@@ -1,7 +1,9 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:get/get.dart';
 
 class RegisterRepository {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -9,6 +11,7 @@ class RegisterRepository {
   Future<void> registerApp({
     required String email,
     required String password,
+    required BuildContext context,
   }) async {
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
@@ -19,56 +22,76 @@ class RegisterRepository {
       await Modular.to.pushReplacementNamed('/login/');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
-        await Get.dialog(
-          CupertinoAlertDialog(
-            title: const Text('Alerta!'),
-            content: const Text('Este e-mail já está em uso!'),
-            actions: [
-              CupertinoDialogAction(
-                onPressed: Get.back,
-                child: const Text('Ok'),
-              ),
-            ],
-          ),
+        await  showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text('Erro'),
+              content: Text('Email já cadastrado'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Modular.to.pop();
+                  },
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
         );
       } else if (e.code == 'invalid-email') {
-        await Get.dialog(
-          CupertinoAlertDialog(
-            title: const Text('Alerta!'),
-            content: const Text('Este e-mail é inválido!'),
-            actions: [
-              CupertinoDialogAction(
-                onPressed: Get.back,
-                child: const Text('Ok'),
-              ),
-            ],
-          ),
+        await   showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text('Erro'),
+              content: Text('Email inválido'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Modular.to.pop();
+                  },
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
         );
       } else if (e.code == 'operation-not-allowed') {
-        await Get.dialog(
-          CupertinoAlertDialog(
-            title: const Text('Alerta!'),
-            content: const Text('Operação não permitida!'),
-            actions: [
-              CupertinoDialogAction(
-                onPressed: Get.back,
-                child: const Text('Ok'),
-              ),
-            ],
-          ),
+        await showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text('Erro'),
+              content: Text('Operação não permitida'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Modular.to.pop();
+                  },
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
         );
       } else {
-        await Get.dialog(
-          CupertinoAlertDialog(
-            title: const Text('Alerta!'),
-            content: const Text('ocorreu um  erro desconhecido!'),
-            actions: [
-              CupertinoDialogAction(
-                onPressed: Get.back,
-                child: const Text('Ok'),
-              ),
-            ],
-          ),
+        await  showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text('Erro'),
+              content: Text('Erro desconhecido'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Modular.to.pop();
+                  },
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
         );
       }
     }

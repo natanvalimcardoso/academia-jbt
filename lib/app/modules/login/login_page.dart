@@ -65,8 +65,7 @@ class LoginPage extends StatelessWidget {
                             controller: controller.emailController,
                             validator: Validatorless.multiple(
                               [
-                                Validatorless.required(
-                                    'O campo de email é obrigatório'),
+                                Validatorless.required('O campo de email é obrigatório'),
                                 Validatorless.email('E-mail inválido'),
                               ],
                             ),
@@ -77,8 +76,7 @@ class LoginPage extends StatelessWidget {
                             controller: controller.passwordController,
                             validator: Validatorless.multiple(
                               [
-                                Validatorless.required(
-                                    'O campo de senha é obrigatório'),
+                                Validatorless.required('O campo de senha é obrigatório'),
                               ],
                             ),
                           ),
@@ -98,6 +96,7 @@ class LoginPage extends StatelessWidget {
                           controller.login(
                             controller.emailController.text,
                             controller.passwordController.text,
+                            context,
                           );
                         }
                       },

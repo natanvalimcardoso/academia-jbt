@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:get/get.dart';
 
 class LoginRepository {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -9,6 +9,7 @@ class LoginRepository {
   Future loginWithEmail(
     String email,
     String password,
+    BuildContext context,
   ) async {
     try {
       final credential = await _firebaseAuth.signInWithEmailAndPassword(
@@ -19,17 +20,22 @@ class LoginRepository {
       Modular.to.pushReplacementNamed('/home');
       return credential.user;
     } on FirebaseAuthException {
-      return await Get.dialog(
-        CupertinoAlertDialog(
-          title: const Text('Alerta!'),
-          content: const Text('E-mail inválido'),
-          actions: [
-            CupertinoDialogAction(
-              onPressed: Get.back,
-              child: const Text('Ok'),
-            ),
-          ],
-        ),
+      await showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Erro'),
+            content: Text('Email ou senha incorretos'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Modular.to.pop();
+                },
+                child: Text('Ok'),
+              ),
+            ],
+          );
+        },
       );
     }
   }

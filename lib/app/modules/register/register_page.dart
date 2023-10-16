@@ -138,6 +138,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       controller.register(
                         controller.emailController.text,
                         controller.passwordController.text,
+                        context,
                       );
                     }
                   },

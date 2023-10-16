@@ -9,14 +9,14 @@ import 'package:optimized_time/app/services/auth/auth_service.dart';
 part 'login_state.dart';
 
 class LoginController extends Cubit<LoginState> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final formKeyLogin = GlobalKey<FormState>();
 
   LoginController({
     required AuthService authService,
   })  : _authService = authService,
         super(const LoginState.initial());
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final formKeyLogin = GlobalKey<FormState>();
 
   final AuthService _authService;
 
@@ -25,10 +25,12 @@ class LoginController extends Cubit<LoginState> {
   Future<void> login(
     String email,
     String password,
+    BuildContext context,
   ) async {
     await repository.loginWithEmail(
       emailController.text,
       passwordController.text,
+      context,
     );
   }
 

@@ -14,10 +14,12 @@ class RegisterController {
   Future<void> register(
     String email,
     String password,
+    BuildContext context,
   ) async {
     await registerRepository.registerApp(
       email: emailController.text,
       password: passwordController.text,
+      context: context,
     );
   }
 }
